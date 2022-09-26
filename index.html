@@ -7,47 +7,296 @@
   <title>Shark App</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-  
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Roboto', sans-serif;
-    }
-    html,
-    body {
-      height: 100%;
-    }
-    main {
-      height: 100%;
-      display: flex;
-      position: absolute;
-      left: 250px;
-    }
-    .sidebar {
-      height: 100%;
-      background: lightgray;
-      width: 250px;
-      position: fixed;
-      top: 0;
-      left: 0;
-    }
-    .inbox {
-      border-right: 1px solid grey;
-      width: 300px;
-      height: 100%;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+ 
 </head>
 <body>
     <aside class="sidebar">
-
+      <div class="logo">
+        <img class="logo__image" src="./image/icons8-cube-60.png" alt="">
+        <h2>Shark</h2>
+      </div>
+      <ul class="sidebar__list">
+        <li class="sidebar__item">
+          <i class="las la-layer-group"></i>
+          <h4 class="sidebar__text">Dashboard</h4>
+        </li>
+        <li class="sidebar__item">
+          <i class="las la-chart-bar"></i>
+          <h4 class="sidebar__text">Statistic</h4>
+        </li>
+        <li class="sidebar__item">
+          <i class="las la-comment-alt"></i>
+          <h4 class="sidebar__text">Support</h4>
+        </li>
+        <li class="sidebar__item">
+          <i class="las la-inbox"></i>
+          <h4 class="sidebar__text">Inbox</h4>
+        </li>
+        <li class="sidebar__item">
+          <i class="las la-rocket"></i>
+          <h4 class="sidebar__text">Goals</h4>
+        </li>
+        <li class="sidebar__item">
+          <i class="las la-link"></i>
+          <h4 class="sidebar__text">Links</h4>
+        </li>
+      </ul>
+      <h4 class="sidebar__title" >Projects</h4>
+      <ul class="project">
+        <li class="project__item">
+          <div class="project__thumb">
+            <div class="project__circle"></div>
+            <h5 class="sidebar__text">Callipso</h5>
+          </div>
+          <div class="project__plus">+4</div>
+        </li>
+        <li class="project__item">
+          <div class="project__thumb">
+            <div class="project__circle project__circle--blue"></div>
+            <h5 class="sidebar__text">BWS Bank</h5>
+          </div>
+          <div class="project__plus">+5</div>
+        </li>
+        <li class="project__item">
+          <div class="project__thumb">
+            <div class="project__circle project__circle--violet"></div>
+            <h5 class="sidebar__text">Unicorn App</h5>
+          </div>
+          <div class="project__plus">+1</div>
+        </li>
+        <li class="project__item">
+          <div class="project__thumb">
+            <div class="project__circle project__circle--aqua"></div>
+            <h5 class="sidebar__text">Salt</h5>
+          </div>
+          <div class="project__plus">+3</div>
+        </li>
+      </ul>
+      <button class="sidebar__button" type="button">Show More</button>
     </aside>
     <main>
-      <div class="inbox"></div>
-      <div class="chat"></div>
-      <div class="panel"></div>
+      <div class="inbox">
+        <div class="inbox__head">
+          <h1>INBOX</h1>
+          <button type="button" class="burger" onclick="toggleMenu()">
+            <i class="las la-plus"></i>
+          </button> 
+        </div>
+        <div class="inbox__group">
+          <button class="inbox__button" type="button">General</button>
+          <button class="inbox__button" type="button">Total</button>
+        </div>
+        <ul class="chat">
+          <li class="chat__item chat__item--grey">
+            <div class="chat__block">
+              <img src="./image/Michael.png" width="55px" height="55px" alt="">
+              <div class="chat__list">
+                <h4 class="chat__name">Michael.B</h4>
+                <h5 class="chat__profession">Project manager</h5>
+                <h5 class="chat__letter">Sent you the file</h5>
+              </div>
+            </div>
+            <div class="chat__amount">5</div>
+          </li>
+          <li class="chat__item chat__item--grey">
+            <div class="chat__block">
+              <img src="./image/Katie.png" width="55px" height="55px" alt="">
+              <div class="chat__list">
+                <h4 class="chat__name">Katie.W</h4>
+                <h5 class="chat__profession">Middle designer</h5>
+                <h5 class="chat__letter">See you tomorrow..</h5>
+              </div>
+            </div>
+            <div class="chat__amount">3</div>
+          </li>
+          <li class="chat__item">
+            <img src="./image/Arnold.png" width="55px" height="55px" alt="">
+            <div class="chat__list">
+              <h4 class="chat__name">Arnold.J</h4>
+              <h5 class="chat__profession">Ul designer</h5>
+              <h5 class="chat__letter">Hi, I checked the layot again</h5>
+            </div>
+          </li>
+          <li class="chat__item">
+            <img src="./image/Fannie.png" width="55px" height="55px" alt="">
+            <div class="chat__list">
+              <h4 class="chat__name">Fannie.K</h4>
+              <h5 class="chat__profession">HR manager</h5>
+              <h5 class="chat__letter">okay!</h5>
+            </div>
+          </li>
+          <li class="chat__item">
+            <div class="chat__thumb">IA</div>
+            <div class="chat__list">
+              <h4 class="chat__name">Isaak.A</h4>
+              <h5 class="chat__profession">SMM manager</h5>
+              <h5 class="chat__letter">I don't think we're going to...</h5>
+            </div>
+          </li>
+          <li class="chat__item">
+            <div class="chat__thumb">J</div>
+            <div class="chat__list">
+              <h4 class="chat__name">Jacob</h4>
+              <h5 class="chat__profession">UX designer</h5>
+              <h5 class="chat__letter">Sorry, Friend. I want do it again</h5>
+            </div>
+          </li>
+          <li class="chat__item">
+            <div class="chat__thumb">IA</div>
+            <div class="chat__list">
+              <h4 class="chat__name">Isaak.A</h4>
+              <h5 class="chat__profession">SMM manager</h5>
+              <h5 class="chat__letter">I don't think we're going to...</h5>
+            </div>
+          </li>
+          <li class="chat__item">
+            <div class="chat__thumb">J</div>
+            <div class="chat__list">
+              <h4 class="chat__name">Jacob</h4>
+              <h5 class="chat__profession">UX designer</h5>
+              <h5 class="chat__letter">Sorry, Friend. I want do it again</h5>
+            </div>
+          </li>
+          <li class="chat__item">
+            <div class="chat__thumb">IA</div>
+            <div class="chat__list">
+              <h4 class="chat__name">Isaak.A</h4>
+              <h5 class="chat__profession">SMM manager</h5>
+              <h5 class="chat__letter">I don't think we're going to...</h5>
+            </div>
+          </li>
+          <li class="chat__item">
+            <div class="chat__thumb">J</div>
+            <div class="chat__list">
+              <h4 class="chat__name">Jacob</h4>
+              <h5 class="chat__profession">UX designer</h5>
+              <h5 class="chat__letter">Sorry, Friend. I want do it again</h5>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="message">
+        <header>
+          <div class="message__block">
+            <img src="./image/Michael.png" width="45px" height="45px" alt="">
+            <div class="message__account">
+              <h4 class="message__name">Michael.B</h4>
+              <h5 class="message__status">Online</h5>
+            </div>
+          </div>
+          <div class="message__area">
+            <div class="message__form">
+              <input class="message__input" type="text" placeholder="Bri">
+              <i class="las la-search"></i>
+            </div>
+            <div class="message__icon">
+              <i class="las la-microphone"></i>
+            </div>
+            <div class="message__icon">
+              <i class="las la-video"></i>
+            </div>
+          </div>
+        </header>
+        <div class="message__wrapper">
+          <h4 class="message__date">July 29, Tuesday</h4>
+          <ul class="message__list">
+            <li class="message__item message__item--my">
+              <span class="message__time">12:25</span>
+              <div class="message__text message__text--my">Hello</div>
+              <img class="message__image" src="./image/audio.png" alt="">
+            </li>
+            <li class="message__item">
+              <span class="message__time">12:28</span>
+              <div class="message__text">Hi</div>
+              <img class="message__image" src="./image/audio2.png" alt="">
+            </li>
+            <li class="message__item message__item--my">
+              <span class="message__time">12:29</span>
+              <div class="message__text message__text--my">
+                Okay, thank you very mutch for the speed
+              </div>
+            </li>
+            <li class="message__item">
+              <span class="message__time">12:30</span>
+              <div class="message__text">Catch</div>
+              <div class="message__word">
+                <img src="./image/word.png" alt="">
+                <div class="message__type">
+                  <div class="message__doc">Brief.doc</div>
+                  <div class="message__size">148 KB</div>
+                </div>
+              </div>
+            </li>
+            <li class="message__item message__item--my">
+              <span class="message__time">12:25</span>
+              <div class="message__text message__text--my">Hello</div>
+              <img class="message__image" src="./image/audio.png" alt="">
+            </li>
+            <li class="message__item">
+              <span class="message__time">12:28</span>
+              <div class="message__text">Hi</div>
+              <img class="message__image" src="./image/audio2.png" alt="">
+            </li>
+            <li class="message__item message__item--my">
+              <span class="message__time">12:29</span>
+              <div class="message__text message__text--my">
+                Okay, thank you very mutch for the speed
+              </div>
+            </li>
+            <li class="message__item">
+              <span class="message__time">12:30</span>
+              <div class="message__text">Catch</div>
+              <div class="message__word">
+                <img src="./image/word.png" alt="">
+                <div class="message__type">
+                  <div class="message__doc">Brief.doc</div>
+                  <div class="message__size">148 KB</div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="underside">
+          <input class="underside__input" type="text" placeholder="Write a message...">
+          <div class="underside__thumb">
+            <div class="underside__icon">
+              <i class="las la-image"></i>
+            </div>
+            <div class="underside__icon">
+              <i class="las la-microphone"></i>
+            </div>
+            <div class="underside__icon">
+              <i class="las la-caret-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel__icon">
+          <i class="las la-ellipsis-h"></i>
+        </div>
+        <div class="panel__block">
+          <div class="panel__icon">
+            <i class="las la-exclamation-circle"></i>
+          </div>
+          <div class="panel__icon">
+            <i class="las la-bell-slash"></i>
+          </div>
+          <div class="panel__icon">
+            <i class="las la-trash"></i>
+          </div>
+        </div>
+      </div>
     </main>
+    <script>
+      function toggleMenu() {
+            var sidebar = document.querySelector('.sidebar');
+            var burger = document.querySelector('.burger');
+  
+            sidebar.classList.toggle('sidebar--open');
+            burger.classList.toggle('burger--open');
+        }
+    </script>
 </body>
 </html>
