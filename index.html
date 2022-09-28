@@ -1,87 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shark App</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-  <link rel="stylesheet" href="style.css">
- 
-</head>
-<body>
-    <aside class="sidebar">
-      <div class="logo">
-        <img class="logo__image" src="./image/icons8-cube-60.png" alt="">
-        <h2>Shark</h2>
-      </div>
-      <ul class="sidebar__list">
-        <li class="sidebar__item">
-          <i class="las la-layer-group"></i>
-          <h4 class="sidebar__text">Dashboard</h4>
-        </li>
-        <li class="sidebar__item">
-          <i class="las la-chart-bar"></i>
-          <h4 class="sidebar__text">Statistic</h4>
-        </li>
-        <li class="sidebar__item">
-          <i class="las la-comment-alt"></i>
-          <h4 class="sidebar__text">Support</h4>
-        </li>
-        <li class="sidebar__item">
-          <i class="las la-inbox"></i>
-          <h4 class="sidebar__text">Inbox</h4>
-        </li>
-        <li class="sidebar__item">
-          <i class="las la-rocket"></i>
-          <h4 class="sidebar__text">Goals</h4>
-        </li>
-        <li class="sidebar__item">
-          <i class="las la-link"></i>
-          <h4 class="sidebar__text">Links</h4>
-        </li>
-      </ul>
-      <h4 class="sidebar__title" >Projects</h4>
-      <ul class="project">
-        <li class="project__item">
-          <div class="project__thumb">
-            <div class="project__circle"></div>
-            <h5 class="sidebar__text">Callipso</h5>
-          </div>
-          <div class="project__plus">+4</div>
-        </li>
-        <li class="project__item">
-          <div class="project__thumb">
-            <div class="project__circle project__circle--blue"></div>
-            <h5 class="sidebar__text">BWS Bank</h5>
-          </div>
-          <div class="project__plus">+5</div>
-        </li>
-        <li class="project__item">
-          <div class="project__thumb">
-            <div class="project__circle project__circle--violet"></div>
-            <h5 class="sidebar__text">Unicorn App</h5>
-          </div>
-          <div class="project__plus">+1</div>
-        </li>
-        <li class="project__item">
-          <div class="project__thumb">
-            <div class="project__circle project__circle--aqua"></div>
-            <h5 class="sidebar__text">Salt</h5>
-          </div>
-          <div class="project__plus">+3</div>
-        </li>
-      </ul>
-      <button class="sidebar__button" type="button">Show More</button>
-    </aside>
-    <main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shark App</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <aside class="sidebar">
+        <div>
+          <div class="logo">
+            <div class="logo__thumb">
+              <img class="logo__image" src="./image/icons8-cube-60.png" alt="" />
+          <h2>Shark</h2>
+            </div>
+          <button type="button" class="burger burger--mobile" onclick="toggleMenu()">
+            <i class="las la-plus"></i>
+          </button>
+        </div>
+        <ul class="sidebar__list">
+          <li class="sidebar__item">
+            <span class="sidebar__image">
+              <i class="las la-layer-group"></i>
+            </span>
+            <a class="sidebar__link" href="#">Dashboard</a>
+          </li>
+          <li class="sidebar__item">
+            <span class="sidebar__image">
+              <i class="las la-chart-bar"></i>
+            </span>
+            <a class="sidebar__link" href="#">Statistic</a>
+          </li>
+          <li class="sidebar__item">
+            <span class="sidebar__image">
+              <i class="las la-comment-alt"></i>
+            </span>
+            <a class="sidebar__link" href="#">Support</a>
+          </li>
+          <li class="sidebar__item sidebar__item--active">
+            <span class="sidebar__image sidebar__image--active">
+              <i class="las la-inbox"></i>
+            </span>
+            <a class="sidebar__link sidebar__link--active" href="#">Inbox</a>
+          </li>
+          <li class="sidebar__item">
+            <span class="sidebar__image">
+              <i class="las la-rocket"></i>
+            </span>
+            <a class="sidebar__link" href="#">Goals</a>
+          </li>
+          <li class="sidebar__item">
+            <span class="sidebar__image">
+              <i class="las la-link"></i>
+            </span>
+            <a class="sidebar__link" href="#">Links</a>
+          </li>
+        </ul>
+        </div>
+        <div class="project">
+          <h3 class="project__title">PROJECTS</h3>
+        <ul>
+          <li class="project__item">
+            <div class="project__thumb">
+              <div class="project__circle"></div>
+              <h4 class="project__text">Callipso</h4>
+            </div>
+            <div class="project__plus">+4</div>
+          </li>
+          <li class="project__item">
+            <div class="project__thumb">
+              <div class="project__circle project__circle--blue"></div>
+              <h4 class="project__text">BWS Bank</h4>
+            </div>
+            <div class="project__plus">+5</div>
+          </li>
+          <li class="project__item">
+            <div class="project__thumb">
+              <div class="project__circle project__circle--violet"></div>
+              <h4 class="project__text">Unicorn App</h4>
+            </div>
+            <div class="project__plus">+1</div>
+          </li>
+          <li class="project__item">
+            <div class="project__thumb">
+              <div class="project__circle project__circle--aqua"></div>
+              <h4 class="project__text">Salt</h4>
+            </div>
+            <div class="project__plus">+3</div>
+          </li>
+        </ul>
+        <button class="sidebar__button" type="button">Show More</button>
+        </div>  
+      </aside>
       <div class="inbox">
         <div class="inbox__head">
           <h1>INBOX</h1>
           <button type="button" class="burger" onclick="toggleMenu()">
             <i class="las la-plus"></i>
-          </button> 
+          </button>
         </div>
         <div class="inbox__group">
           <button class="inbox__button" type="button">General</button>
@@ -90,7 +116,10 @@
         <ul class="chat">
           <li class="chat__item chat__item--grey">
             <div class="chat__block">
-              <img src="./image/Michael.png" width="55px" height="55px" alt="">
+              <figure class="chat__avatar">
+                <img class="chat__image" src="https://via.placeholder.com/50" alt="">
+                <div class="chat__online"></div>
+              </figure>
               <div class="chat__list">
                 <h4 class="chat__name">Michael.B</h4>
                 <h5 class="chat__profession">Project manager</h5>
@@ -101,7 +130,10 @@
           </li>
           <li class="chat__item chat__item--grey">
             <div class="chat__block">
-              <img src="./image/Katie.png" width="55px" height="55px" alt="">
+              <figure class="chat__avatar">
+                <img class="chat__image" src="https://via.placeholder.com/50" alt="">
+                <div class="chat__online"></div>
+              </figure>
               <div class="chat__list">
                 <h4 class="chat__name">Katie.W</h4>
                 <h5 class="chat__profession">Middle designer</h5>
@@ -111,84 +143,125 @@
             <div class="chat__amount">3</div>
           </li>
           <li class="chat__item">
-            <img src="./image/Arnold.png" width="55px" height="55px" alt="">
-            <div class="chat__list">
-              <h4 class="chat__name">Arnold.J</h4>
-              <h5 class="chat__profession">Ul designer</h5>
-              <h5 class="chat__letter">Hi, I checked the layot again</h5>
+            <div class="chat__block">
+              <figure class="chat__avatar">
+                <img class="chat__image" src="https://via.placeholder.com/50" alt="">
+              </figure>
+              <div class="chat__list">
+                <h4 class="chat__name">Arnold.J</h4>
+                <h5 class="chat__profession">Ul designer</h5>
+                <h5 class="chat__letter">Hi, I checked the layot again</h5>
+              </div>
             </div>
           </li>
           <li class="chat__item">
-            <img src="./image/Fannie.png" width="55px" height="55px" alt="">
-            <div class="chat__list">
-              <h4 class="chat__name">Fannie.K</h4>
-              <h5 class="chat__profession">HR manager</h5>
-              <h5 class="chat__letter">okay!</h5>
+            <div class="chat__block">
+              <figure class="chat__avatar">
+                <img class="chat__image" src="https://via.placeholder.com/50" alt="">
+                <div class="chat__online"></div>
+              </figure>
+              <div class="chat__list">
+                <h4 class="chat__name">Fannie.K</h4>
+                <h5 class="chat__profession">HR manager</h5>
+                <h5 class="chat__letter">okay!</h5>
+              </div>
             </div>
           </li>
           <li class="chat__item">
-            <div class="chat__thumb">IA</div>
-            <div class="chat__list">
-              <h4 class="chat__name">Isaak.A</h4>
-              <h5 class="chat__profession">SMM manager</h5>
-              <h5 class="chat__letter">I don't think we're going to...</h5>
+            <div class="chat__block">
+              <figure class="chat__avatar">
+                <img class="chat__image" src="https://via.placeholder.com/50" alt="">
+              </figure>
+              <div class="chat__list">
+                <h4 class="chat__name">Isaak.A</h4>
+                <h5 class="chat__profession">SMM manager</h5>
+                <h5 class="chat__letter">I don't think we're going to...</h5>
+              </div>
             </div>
           </li>
           <li class="chat__item">
-            <div class="chat__thumb">J</div>
-            <div class="chat__list">
-              <h4 class="chat__name">Jacob</h4>
-              <h5 class="chat__profession">UX designer</h5>
-              <h5 class="chat__letter">Sorry, Friend. I want do it again</h5>
+            <div class="chat__block">
+              <figure class="chat__avatar">
+                <img class="chat__image" src="https://via.placeholder.com/50" alt="">
+              </figure>
+              <div class="chat__list">
+                <h4 class="chat__name">Jacob</h4>
+                <h5 class="chat__profession">UX designer</h5>
+                <h5 class="chat__letter">Sorry, Friend. I want do it again</h5>
+              </div>
             </div>
           </li>
           <li class="chat__item">
-            <div class="chat__thumb">IA</div>
-            <div class="chat__list">
-              <h4 class="chat__name">Isaak.A</h4>
-              <h5 class="chat__profession">SMM manager</h5>
-              <h5 class="chat__letter">I don't think we're going to...</h5>
+            <div class="chat__block">
+              <figure class="chat__avatar">
+                <img class="chat__image" src="https://via.placeholder.com/50" alt="">
+              </figure>
+              <div class="chat__list">
+                <h4 class="chat__name">Arnold.J</h4>
+                <h5 class="chat__profession">Ul designer</h5>
+                <h5 class="chat__letter">Hi, I checked the layot again</h5>
+              </div>
             </div>
           </li>
           <li class="chat__item">
-            <div class="chat__thumb">J</div>
-            <div class="chat__list">
-              <h4 class="chat__name">Jacob</h4>
-              <h5 class="chat__profession">UX designer</h5>
-              <h5 class="chat__letter">Sorry, Friend. I want do it again</h5>
+            <div class="chat__block">
+              <figure class="chat__avatar">
+                <img class="chat__image" src="https://via.placeholder.com/50" alt="">
+              </figure>
+              <div class="chat__list">
+                <h4 class="chat__name">Fannie.K</h4>
+                <h5 class="chat__profession">HR manager</h5>
+                <h5 class="chat__letter">okay!</h5>
+              </div>
             </div>
           </li>
           <li class="chat__item">
-            <div class="chat__thumb">IA</div>
-            <div class="chat__list">
-              <h4 class="chat__name">Isaak.A</h4>
-              <h5 class="chat__profession">SMM manager</h5>
-              <h5 class="chat__letter">I don't think we're going to...</h5>
+            <div class="chat__block">
+              <figure class="chat__avatar">
+                <img class="chat__image" src="https://via.placeholder.com/50" alt="">
+              </figure>
+              <div class="chat__list">
+                <h4 class="chat__name">Isaak.A</h4>
+                <h5 class="chat__profession">SMM manager</h5>
+                <h5 class="chat__letter">I don't think we're going to...</h5>
+              </div>
             </div>
           </li>
           <li class="chat__item">
-            <div class="chat__thumb">J</div>
-            <div class="chat__list">
-              <h4 class="chat__name">Jacob</h4>
-              <h5 class="chat__profession">UX designer</h5>
-              <h5 class="chat__letter">Sorry, Friend. I want do it again</h5>
+            <div class="chat__block">
+              <figure class="chat__avatar">
+                <img class="chat__image" src="https://via.placeholder.com/50" alt="">
+              </figure>
+              <div class="chat__list">
+                <h4 class="chat__name">Jacob</h4>
+                <h5 class="chat__profession">UX designer</h5>
+                <h5 class="chat__letter">Sorry, Friend. I want do it again</h5>
+              </div>
             </div>
           </li>
         </ul>
       </div>
       <div class="message">
         <header>
+          <button type="button" class="button" onclick="toggleMenu()">
+            <i class="las la-bars"></i>
+          </button>
           <div class="message__block">
-            <img src="./image/Michael.png" width="45px" height="45px" alt="">
-            <div class="message__account">
+            <figure class="message__avatar">
+              <img class="message__foto" src="https://via.placeholder.com/40" alt="">
+              <div class="chat__online"></div>
+            </figure>
+            <div class="message__line">
               <h4 class="message__name">Michael.B</h4>
               <h5 class="message__status">Online</h5>
             </div>
           </div>
           <div class="message__area">
             <div class="message__form">
-              <input class="message__input" type="text" placeholder="Bri">
-              <i class="las la-search"></i>
+              <input class="message__input" type="text" placeholder="Bri" />
+              <span class="message__search">
+                <i class="las la-search"></i>
+              </span>         
             </div>
             <div class="message__icon">
               <i class="las la-microphone"></i>
@@ -198,30 +271,30 @@
             </div>
           </div>
         </header>
-        <div class="message__wrapper">
+        <div class="message__thumb">
           <h4 class="message__date">July 29, Tuesday</h4>
           <ul class="message__list">
             <li class="message__item message__item--my">
-              <span class="message__time">12:25</span>
+              <time class="message__time">12:25</time>
               <div class="message__text message__text--my">Hello</div>
-              <img class="message__image" src="./image/audio.png" alt="">
+              <span class="message__view">VIEVED AT</span>
             </li>
             <li class="message__item">
-              <span class="message__time">12:28</span>
+              <time class="message__time">12:28</time>
               <div class="message__text">Hi</div>
-              <img class="message__image" src="./image/audio2.png" alt="">
             </li>
             <li class="message__item message__item--my">
-              <span class="message__time">12:29</span>
+              <time class="message__time">12:29</time>
               <div class="message__text message__text--my">
                 Okay, thank you very mutch for the speed
               </div>
+              <span class="message__view">VIEVED AT</span>
             </li>
             <li class="message__item">
-              <span class="message__time">12:30</span>
+              <time class="message__time">12:30</time>
               <div class="message__text">Catch</div>
               <div class="message__word">
-                <img src="./image/word.png" alt="">
+                <img class="message__image" src="./image/word.png" alt="" />
                 <div class="message__type">
                   <div class="message__doc">Brief.doc</div>
                   <div class="message__size">148 KB</div>
@@ -229,26 +302,26 @@
               </div>
             </li>
             <li class="message__item message__item--my">
-              <span class="message__time">12:25</span>
+              <time class="message__time">12:25</time>
               <div class="message__text message__text--my">Hello</div>
-              <img class="message__image" src="./image/audio.png" alt="">
+              <span class="message__view">VIEVED AT</span>
             </li>
             <li class="message__item">
-              <span class="message__time">12:28</span>
+              <time class="message__time">12:28</time>
               <div class="message__text">Hi</div>
-              <img class="message__image" src="./image/audio2.png" alt="">
             </li>
             <li class="message__item message__item--my">
-              <span class="message__time">12:29</span>
+              <time class="message__time">12:29</time>
               <div class="message__text message__text--my">
                 Okay, thank you very mutch for the speed
               </div>
+              <span class="message__view">VIEVED AT</span>
             </li>
             <li class="message__item">
-              <span class="message__time">12:30</span>
+              <time class="message__time">12:30</time>
               <div class="message__text">Catch</div>
               <div class="message__word">
-                <img src="./image/word.png" alt="">
+                <img class="message__image" src="./image/word.png" alt="" />
                 <div class="message__type">
                   <div class="message__doc">Brief.doc</div>
                   <div class="message__size">148 KB</div>
@@ -258,7 +331,11 @@
           </ul>
         </div>
         <div class="underside">
-          <input class="underside__input" type="text" placeholder="Write a message...">
+          <input
+            class="underside__input"
+            type="text"
+            placeholder="Write a message..."
+          />
           <div class="underside__thumb">
             <div class="underside__icon">
               <i class="las la-image"></i>
@@ -266,7 +343,7 @@
             <div class="underside__icon">
               <i class="las la-microphone"></i>
             </div>
-            <div class="underside__icon">
+            <div class="underside__icon underside__icon--blue">
               <i class="las la-caret-right"></i>
             </div>
           </div>
@@ -288,15 +365,22 @@
           </div>
         </div>
       </div>
-    </main>
+    </div>
     <script>
       function toggleMenu() {
-            var sidebar = document.querySelector('.sidebar');
-            var burger = document.querySelector('.burger');
-  
-            sidebar.classList.toggle('sidebar--open');
-            burger.classList.toggle('burger--open');
-        }
+        var sidebar = document.querySelector(".sidebar", ".inbox");
+        var burger = document.querySelector(".burger");
+
+        sidebar.classList.toggle("sidebar--open");
+        burger.classList.toggle("burger--open");
+      }
+      function toggleMenu() {
+        var sidebar = document.querySelector(".inbox");
+        var burger = document.querySelector(".button");
+
+        sidebar.classList.toggle("inbox--open");
+        burger.classList.toggle("burger--open");
+      }
     </script>
-</body>
+  </body>
 </html>
