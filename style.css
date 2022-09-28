@@ -14,7 +14,6 @@ body {
   color: var(--color);
   height: 100%;
   margin: 0;
-  /* overflow: hidden; */
 }
 ul {
   list-style: none;
@@ -92,7 +91,7 @@ a {
 .sidebar__item--active {
   color: var(--color-accent);
   background: var(--background);
-  border-right: 5px solid #FF8366;
+  border-right: 5px solid #ff8366;
   border-radius: 3px;
 }
 .sidebar__image--active {
@@ -104,7 +103,7 @@ a {
 .sidebar__item:hover {
   color: var(--color-accent);
   background: var(--background);
-  border-right: 5px solid #FF8366;
+  border-right: 5px solid #ff8366;
   border-radius: 3px;
 }
 .sidebar__item:hover .sidebar__image {
@@ -168,11 +167,19 @@ a {
   grid-area: inbox;
   border-right: 1px solid var(--background-accent);
   padding: 10px;
+  background: var(--background);
 }
 .button {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: none;
+  border: none;
+  background: none;
+  font-size: 16px;
 }
 .inbox__head {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -493,14 +500,15 @@ header {
     width: 250px;
     height: 100%;
   }
-  .sidebar--open, 
+  .sidebar--open,
   .inbox--open {
     transform: none;
   }
   .inbox--open {
     z-index: 9;
   }
-  .burger--open {
+  .burger--open,
+  .button--open {
     left: 250px;
   }
   .panel {
