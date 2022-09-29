@@ -161,7 +161,7 @@ a {
   width: 100%;
   color: var(--color);
   border: 1px solid gray;
-  border-radius: 3px;
+  border-radius: 10px;
 }
 .inbox {
   grid-area: inbox;
@@ -206,6 +206,7 @@ a {
 .burger {
   background: none;
   border: none;
+  font-size: 24px;
 }
 .chat {
   margin-top: 15px;
@@ -263,6 +264,9 @@ a {
 .chat__letter {
   font-weight: 500;
   font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .chat__block {
   display: flex;
@@ -433,7 +437,9 @@ header {
   font-weight: 500;
   border-top: 1px solid var(--background-accent);
   border-radius: 4px;
+  padding: 5px;
   outline: 0;
+  width: 100%;
 }
 .underside__icon {
   display: flex;
@@ -479,7 +485,7 @@ header {
   font-size: 18px;
   margin-top: 15px;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .wrapper {
     grid-template-columns: 0 0 auto 0;
     grid-template-areas: "aside inbox message panel";
@@ -520,5 +526,8 @@ header {
   }
   .button {
     display: inline;
+  }
+  .message__area {
+    display: none;
   }
 }
